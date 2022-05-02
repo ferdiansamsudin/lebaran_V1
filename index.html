@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            background-color: #222222;
+        }
+        .container {
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        footer{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="image"></div>
+    </div>
+    <audio autoplay id="audio">
+        <!-- <source src="audio.mp3" type="audio/mpeg"></audio> -->
+    <footer>
+        <p>&copy; Copyright 2022 | Develop by Fahrul</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js" ></script>
+    <script>
+
+        const getAudio = () => {
+            let audio = document.getElementById("audio");
+            audio.innerHTML = "<source src='audio.mp3' type='audio/mpeg'></audio>"
+        }
+
+        const getImage = () => {
+            let image = document.getElementById("image");
+            image.innerHTML = "<img src='https://user-images.githubusercontent.com/53459506/166192714-e5839033-edc0-4c15-8c8b-4bb56eaeac62.gif' >"
+        }
+        
+        const alert1 = () => {
+            Swal.fire({
+                title: 'Cicak apa yang bisa bikin mati ?',
+                imageUrl: 'https://user-images.githubusercontent.com/53459506/166191516-dd7be6ee-0412-49d8-b88b-b58b7642a914.gif',
+                imageWidth: 300,
+                imageHeight: 250,
+                imageAlt: 'Custom image',
+                willClose: () => {
+                    alert2()
+                }
+            })
+        }
+
+        const alert2 = () => {
+            Swal.fire({
+                title: 'Cicak napas kalau liat senyum manismu ',
+                imageUrl: 'https://user-images.githubusercontent.com/89229220/166234750-e276960a-c836-486e-a237-33632a080185.gif',
+                imageWidth: 300,
+                imageHeight: 250,
+                imageAlt: 'Custom image',
+                willClose: () => {
+                    getImage()
+                }
+            })
+        }
+        
+        Swal.fire({
+            title: 'Halo Eca ...',
+            imageUrl: 'https://user-images.githubusercontent.com/53459506/166185249-4fb75200-23b7-4eac-b5cf-9924569e4a8f.gif',
+            imageWidth: 300,
+            imageHeight: 250,
+            imageAlt: 'Custom image',
+            willClose: () => {
+                alert1()
+                getAudio()
+            }
+        })
+    </script>
+</body>
+</html>
